@@ -1,0 +1,12 @@
+--- origsrc/sushi-0.2.1/src/Makefile-sushi.am	2011-06-06 14:53:30.000000000 -0500
++++ src/sushi-0.2.1/src/Makefile-sushi.am	2011-12-11 02:34:10.519743300 -0600
+@@ -58,6 +58,9 @@ lib_LTLIBRARIES += libsushi-1.0.la
+ libsushi_1_0_la_LIBADD = \
+     $(SUSHI_LIBS)
+ 
++libsushi_1_0_la_LDFLAGS = \
++    -no-undefined
++
+ libsushi_1_0_la_CPPFLAGS = \
+     $(sushi_cflags)
+ 
