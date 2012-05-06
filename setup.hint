@@ -1,5 +1,5 @@
 category: Gnome
-requires: evince libcairo2 libclutter-gst1.0_0 libclutter-gtk1.0_0 libclutter1.0_0 libfreetype6 libgdk_pixbuf2.0_0 libgirepository1.0_1 libgjs0 libglib2.0_0 libgstinterfaces0.10_0 libgstreamer0.10_0 libgtk3_0 libgtksourceview3.0_0 libintl8 libmusicbrainz3_6 libpango1.0_0 girepository-Clutter1.0 girepository-ClutterGst1.0 girepository-GstInterfaces0.10 girepository-Gtk3.0 girepository-GtkClutter1.0 girepository-GtkSource3.0 girepository-WebKit3.0
+requires: evince libcairo2 libclutter-gst1.0_0 libclutter-gtk1.0_0 libclutter1.0_0 libfreetype6 libgdk_pixbuf2.0_0 libgirepository1.0_1 libgjs0 libglib2.0_0 libgstinterfaces0.10_0 libgstreamer0.10_0 libgtk3_0 libgtksourceview3.0_0 libintl8 libmusicbrainz3_6 libpango1.0_0 libX11_6 girepository-Clutter1.0 girepository-ClutterGst1.0 girepository-GstInterfaces0.10 girepository-Gtk3.0 girepository-GtkClutter1.0 girepository-GtkSource3.0 girepository-WebKit3.0
 sdesc: "Nautilus file previewer"
 ldesc: "This is Sushi, a D-Bus service which provides a quick pop-up 
 previewer for Nautilus, the GNOME desktop file manager."

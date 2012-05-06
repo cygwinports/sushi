@@ -5,3 +5,5 @@ PATCH_URI="0.2.1-no-undefined.patch
 	   0.2.1-vpath.patch"
 
 CYGCONF_ARGS="--libexecdir=/usr/lib/${PN}"
+
+KEEP_LA_FILES="none"
