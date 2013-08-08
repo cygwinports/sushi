@@ -1,0 +1,11 @@
+--- origsrc/sushi-3.8.1/src/Makefile-sushi.am	2012-09-20 15:44:32.000000000 -0500
++++ src/sushi-3.8.1/src/Makefile-sushi.am	2013-08-08 02:11:24.047431200 -0500
+@@ -60,7 +60,7 @@ libsushi_1_0_la_LIBADD = \
+     $(SUSHI_LIBS)
+ 
+ libsushi_1_0_la_LDFLAGS = \
+-    -avoid-version
++    -avoid-version -no-undefined
+ 
+ libsushi_1_0_la_CPPFLAGS = \
+     $(sushi_cflags)
