@@ -1,13 +1,14 @@
 inherit gnome2
 
 NAME="sushi"
-VERSION=3.8.1
+VERSION=3.10.0
 RELEASE=1
 CATEGORY="GNOME"
 SUMMARY="Nautilus file previewer"
 DESCRIPTION="This is Sushi, a D-Bus service which provides a quick pop-up
 previewer for Nautilus, the GNOME desktop file manager."
-REQUIRES="girepository-Clutter1.0 girepository-ClutterGst1.0 girepository-Evince3.0 girepository-GstInterfaces0.10 girepository-Gtk3.0 girepository-GtkClutter1.0 girepository-GtkSource3.0 girepository-WebKit3.0"
+# most imports are already covered by the GIR deps, except for these:
+REQUIRES="girepository-ClutterGst2.0 girepository-GtkClutter1.0 girepository-WebKit3.0"
 
 PATCH_URI="
 	3.8.1-no-undefined.patch
