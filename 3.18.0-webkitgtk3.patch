@@ -1,0 +1,48 @@
+Revert commit f814446e9032d64f34f2b02e4f8b899db31688e6
+
+--- origsrc/sushi-3.18.0/configure.ac	2015-09-22 18:04:59.000000000 -0500
++++ src/sushi-3.18.0/configure.ac	2015-11-08 14:47:14.224085100 -0600
+@@ -70,7 +70,7 @@ PKG_CHECK_MODULES(SUSHI,
+                   evince-document-3.0
+                   evince-view-3.0
+                   gtksourceview-3.0
+-                  webkit2gtk-4.0)
++                  webkitgtk-3.0)
+ 
+ GLIB_COMPILE_RESOURCES=`$PKG_CONFIG --variable glib_compile_resources gio-2.0`
+ AC_SUBST(GLIB_COMPILE_RESOURCES)
+--- origsrc/sushi-3.18.0/src/js/viewers/html.js	2015-07-22 14:26:54.000000000 -0500
++++ src/sushi-3.18.0/src/js/viewers/html.js	2015-11-08 14:49:47.814088500 -0600
+@@ -28,7 +28,7 @@ const Gtk = imports.gi.Gtk;
+ const GLib = imports.gi.GLib;
+ const Lang = imports.lang;
+ const Sushi = imports.gi.Sushi;
+-const WebKit = imports.gi.WebKit2;
++const WebKit = imports.gi.WebKit;
+ 
+ const MimeHandler = imports.ui.mimeHandler;
+ const Utils = imports.ui.utils;
+@@ -46,16 +46,18 @@ const HTMLRenderer = new Lang.Class({
+         this._file = file;
+         this._callback = callback;
+ 
+-        this._webView = new WebKit.WebView();
+-        this._webView.show_all();
++        this._webView = WebKit.WebView.new();
++        this._scrolledWin = Gtk.ScrolledWindow.new (null, null);
++        this._scrolledWin.add(this._webView);
++        this._scrolledWin.show_all();
+ 
+         /* disable the default context menu of the web view */
+-        this._webView.connect ("context-menu",
+-                               function() {return true;});
++        let settings = this._webView.settings;
++        settings.enable_default_context_menu = false;
+ 
+         this._webView.load_uri(file.get_uri());
+ 
+-        this._actor = new GtkClutter.Actor({ contents: this._webView });
++        this._actor = new GtkClutter.Actor({ contents: this._scrolledWin });
+         this._actor.set_reactive(true);
+ 
+         this._callback();
